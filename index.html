@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Valentine's Day Minal ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ff4e8a, #ff99ac);
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff2e63;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh); opacity: 1;}
+  100% {transform: translateY(-10vh); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Valentine's Day Minal ❤️</h1>
+  <h2>From Ameya 💖</h2>
+  <p>Special Date: 14/02/2026</p>
+
+  <button onclick="showLove()">Click For My Heart 💌</button>
+
+  <div id="message" class="hidden">
+    <p>
+      Minal ❤️  
+      From the moment you came into my life,  
+      everything became more beautiful.  
+      Your smile is my peace,  
+      your love is my strength.  
+    </p>
+
+    <p>
+      I promise to love you, respect you,  
+      and stand beside you always.  
+      You are my today and my forever. 💞
+    </p>
+
+    <button onclick="proposal()">Will You Be Mine Forever? 💍</button>
+  </div>
+
+  <div id="proposalMessage" class="hidden">
+    <h2>I Love You So Much Minal ❤️</h2>
+    <p>Forever Yours, Ameya 💖</p>
+  </div>
+</div>
+
+<!-- Romantic Music -->
+<audio id="bgMusic" loop>
+  <!-- Replace below link with your romantic mp3 file -->
+  <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+function showLove() {
+  document.getElementById("message").style.display = "block";
+  document.getElementById("bgMusic").play();
+}
+
+function proposal() {
+  document.getElementById("proposalMessage").style.display = "block";
+}
+
+// Floating hearts animation
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+  document.getElementById("hearts").appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
